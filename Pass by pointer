@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+
+void swapValues(int *first, int *second) {
+    int temp = *first;
+    *first = *second;
+    *second = temp;
+}
+
+int main() {
+    int num1 = 5, num2 = 2;
+
+    cout << "Before swapping:" << endl;
+    cout << "num1 = " << num1 << endl;
+    cout << "num2 = " << num2 << endl;
+
+    swapValues(&num1, &num2);
+
+    cout << "\nAfter swapping:" << endl;
+    cout << "num1 = " << num1 << endl;
+    cout << "num2 = " << num2 << endl;
+
+    return 0;
+}
+
+
+EXPECTED OUTPUT :
+
+Before swapping:
+num1 = 5
+num2 = 2
+
+After swapping:
+num1 = 2
+num2 = 5
