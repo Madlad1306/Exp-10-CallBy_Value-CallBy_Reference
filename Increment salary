@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+
+int checkConditions(int exp, int rating, int attendance, int projects) {
+    int count = 0;
+
+    if (exp >= 5) count++;        // at least 5 years experience
+    if (rating >= 4) count++;     // performance rating >= 4
+    if (attendance >= 90) count++; // attendance >= 90%
+    if (projects >= 3) count++;   // completed at least 3 projects
+
+    return count;
+}
+
+
+void applyIncrement(float &salary) {
+    salary = salary + (salary * 0.20); // 20% increment
+}
+
+int main() {
+    int experience, rating, attendance, projects;
+    float salary;
+
+    cout << "Enter your years of experience: ";
+    cin >> experience;
+
+    cout << "Enter your performance rating (out of 5): ";
+    cin >> rating;
+
+    cout << "Enter your attendance percentage: ";
+    cin >> attendance;
+
+    cout << "Enter the number of projects completed: ";
+    cin >> projects;
+
+    int count = checkConditions(experience, rating, attendance, projects);
+
+    if (count >= 3) {
+        cout << "\n Congratulations!! You qualified the selection criteria.\n";
+        cout << "Enter your current salary: ";
+        cin >> salary;
+
+        applyIncrement(salary); // updates by reference
+        cout << " Your new salary after 20% increment is: " << salary << endl;
+    } else {
+        cout << "\n Sorry, you did not qualify the selection criteria.\n";
+    }
+
+    return 0;
+}
+
+
+
+
+
+EXPECTED OUTPUT :
+
+Enter your years of experience: 6
+Enter your performance rating (out of 5): 4
+Enter your attendance percentage: 95
+Enter the number of projects completed: 2
+
+Congratulations!! You qualified the selection criteria.
+Enter your current salary: 50000
+Your new salary after 20% increment is: 60000
+
